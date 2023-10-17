@@ -12,15 +12,53 @@
 <body>
     <div id="root"></div>
     <script type="text/babel">
-        function Header() {
+
+        function Header(props) {
+            return (
+                <header>
+                    <h1>My name is {props.name}</h1>
+                </header>
+            );
+        }
+
+        function Main(props) {
+            return ( 
+                <section>
+                    <ul>
+                        {props.phrazes.map((phrase) => (
+                            <li key={phrase.id}>
+                            {phrase.title}
+                            </li>
+                        ))}
+                    </ul>
+                </section>
+            );
+        }
+
+        function App() {
             return (
                 <div>
-                    <h1>My name is Emma</h1>
+                    <Header name="Emma"/>
+                    <Main phrazes = {phrasesObject}/>
                 </div>
             );
         }
+
+        const phrases = [
+            "Hello there",
+            "Howdy",
+            "How is it going"
+        ]
+
+        const phrasesObject = phrases.map(
+            (phrase, i) => ({
+                id: i,
+                title: phrase
+        })
+        );
+        
         ReactDOM.render(
-            <Header/>,
+            <App/>,
             document.getElementById("root")
         )
     </script>
