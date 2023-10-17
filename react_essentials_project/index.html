@@ -24,10 +24,14 @@
         function Main(props) {
             return ( 
                 <section>
+                    <img
+                    height= {200}
+                    alt="toucan" 
+                    src="https://images.pexels.com/photos/17811/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=600"/>
                     <ul>
-                        {props.phrazes.map((phrase) => (
-                            <li key={phrase.id}>
-                            {phrase.title}
+                        {props.animals.map((animal) => (
+                            <li key={animal.id}>
+                                {animal.title}
                             </li>
                         ))}
                     </ul>
@@ -39,23 +43,22 @@
             return (
                 <div>
                     <Header name="Emma"/>
-                    <Main phrazes = {phrasesObject}/>
+                    <Main animals={animalsObject}/>
                 </div>
             );
         }
 
-        const phrases = [
-            "Hello there",
-            "Howdy",
-            "How is it going"
+        const animals = [
+            "Dog bark",
+            "Bee sting",
+            "Cat meow"
         ]
 
-        const phrasesObject = phrases.map(
-            (phrase, i) => ({
-                id: i,
-                title: phrase
-        })
-        );
+        const animalsObject = animals.map((animal, i) => ({
+            id: i,
+            title: animal
+        }))
+   
         
         ReactDOM.render(
             <App/>,
