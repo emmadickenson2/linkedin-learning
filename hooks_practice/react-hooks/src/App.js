@@ -1,6 +1,5 @@
 import React from "react";
 import './App.css';
-import { useTrees } from "./";
 
 function App() {
   const { trees } = useTrees();
