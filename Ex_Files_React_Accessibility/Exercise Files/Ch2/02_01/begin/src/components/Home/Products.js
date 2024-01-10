@@ -4,7 +4,7 @@ import delicate from "assets/images/products/delicate-bottle.png"
 
 const Products = () => {
   return (
-    <section>
+    <section id="products">
         <h2>Premium Quality Olive Oils</h2>
 
         <div className="products">
