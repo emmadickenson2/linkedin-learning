@@ -11,3 +11,17 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.skip_link {
+  background: #e77e23;
+  left: 50%;
+  padding: 8px;
+  position: absolute;
+  transform: translateY(-170%);
+  transition: transform 0.3s;
+}
+
+.skip_link:focus {
+  transform: translateY(0%)
+}
+
